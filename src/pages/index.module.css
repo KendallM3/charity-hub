@@ -1,0 +1,30 @@
+.Title {
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+    /* border: 1px solid #094a537c;  */
+    /* border-radius: 4px; */
+    /* color: #094a5379;  */
+    color: #464646;
+}
+
+.LeftRow {
+    border: 1px solid #fff;
+    background-color: #094a5379; 
+    color: #fff;
+    border-radius: 4px 0 0 4px;
+    flex: 1; 
+    text-align: center;
+}
+
+.RightRow {
+    /* border: 1px solid #464646;
+    background-color: #fff;
+    color: #464646; */
+    border: 1px solid #fff;
+    background-color: #094a5379; 
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    flex: 1; 
+    text-align: center;
+}
