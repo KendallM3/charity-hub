@@ -1,12 +1,13 @@
 import React from "react";
+import Layout from '../components/Layout';
 
 export default function About() {
   return (
-    <div>
-      <h1>About me</h1>
-      <p>
-        I’m good enough, I’m smart enough, and gosh darn it, people like me!
-      </p>
-    </div>
+    <Layout>
+    <h1>About.</h1>
+    <p>
+      This is a web-based application built using React.js and Gatsby to solve a short problem statement. 
+    </p>
+  </Layout>
   )
 }
