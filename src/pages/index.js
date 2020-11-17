@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import Layout from "../components/Layout";
-
 import classes from './index.module.css';
-
 
 class Index extends Component {
   state = {
     donation: '',
     type: 'equal'
   }
-
   
   render () {
 
@@ -17,33 +14,32 @@ class Index extends Component {
     const dayList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const donation = this.state.donation;
     const schedule = {};
+    let runningTotal = 0;
 
     
     if (this.state.type === 'equal') {
       // equal daily donations
       const dailyDonation = (donation / dayList.length);
-      let runningTotal = 0;
       dayList.forEach(day => {
         schedule[day] = Math.floor(dailyDonation * 100) / 100;
         runningTotal += Math.floor(dailyDonation * 100) / 100; 
       });
 
       // add any remaining money above 1p to day 10's donation
-      console.log('remainder: ', Math.floor( (donation - runningTotal) * 100) / 100);
+      // console.log('remainder: ', Math.floor( (donation - runningTotal) * 100) / 100);
       if ((donation - runningTotal) > 0.01) {
         schedule[dayList.length] += Math.floor( (donation - runningTotal) * 100) / 100;
       }
     } else {
       // alternating daily donations
       const dailyDonation = (donation / (dayList.length * 1.5));
-      let runningTotal = 0;
       dayList.forEach(day => {
         if ( (day % 2) !== 0 ) {
 
-          schedule[day] = Math.round(dailyDonation * 2 * 100) / 100;
+          schedule[day] = Math.floor(dailyDonation * 2 * 100) / 100;
           runningTotal += Math.floor(dailyDonation * 2 * 100) / 100;
         } else {
-          schedule[day] = Math.round(dailyDonation * 100) / 100;
+          schedule[day] = Math.floor(dailyDonation * 100) / 100;
           runningTotal += Math.floor(dailyDonation * 100) / 100;
         }
       });
@@ -90,6 +86,8 @@ class Index extends Component {
             <div className={classes.Title}>£</div>
           </div>
           {table}
+          <hr />
+          <button className={classes.Button} onClick={() => alert('How generous, thank you very much!')}>Donate!</button>
         </div>
       </Layout>
     );

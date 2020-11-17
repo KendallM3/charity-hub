@@ -33,3 +33,16 @@
     font-weight: 600;
     color: #464646;
 }
+
+.Button {
+    padding: 5px;
+    background-color: rgba(139, 0, 0, 0.575);
+    color: #fff;
+    border: 1px solid #fff;
+    box-shadow: 1px 1px #4646462f;
+    border-radius: 5px;
+}
+
+.Button:hover {
+    cursor: pointer;
+}
